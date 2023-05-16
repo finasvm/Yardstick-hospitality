@@ -1,0 +1,30 @@
+
+.headerContainer,
+.bodyContainer,
+.footerContainer {
+	max-width: 960px;
+	margin: 0 auto;
+	background: #FFF;
+}
+.padding {
+	padding: 20px;
+}
+.bodyContainer {
+	min-height: 500px;
+}
+a.back-to-top {
+	font-size:.2em;
+	display: none;
+	width: 40px;
+	height: 40px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 31px;
+	background: #27AE61 url(../images/back_to_top.png) no-repeat center 43%;
+	
+}
+a:hover.back-to-top {
+	background-color: #000;
+}

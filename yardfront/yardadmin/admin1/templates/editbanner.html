@@ -1,0 +1,67 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}book appointmnet{% endblock %}
+{% block content %}
+
+<div class="main-container">
+	<div class="pd-ltr-20 xs-pd-20-10">
+		<div class="min-height-200px">
+			
+
+				<!-- Default Basic Forms Start -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix">
+						<div class="pull-left">
+							<h4 class="text-blue h4">Edit banner</h4>
+							<p class="mb-30"></p>
+						</div>
+						
+					</div>
+                    
+					<form method="post" action=""  enctype="multipart/form-data" >
+						{% csrf_token %}
+						
+						<div class="form-group row">
+							<!-- <label class="col-sm-12 col-md-2 col-form-label">Title</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value={{clients.Title}} name="title1" placeholder="" type="text" required>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Image</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" value={{clients.profimage.url}} name="image1"  type="file" required>
+							</div> -->
+                            <table class="table table-special">
+                                {{form.as_table}}
+                            </table>
+						</div>
+						
+						
+						
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label"></label>
+							<div class="col-sm-12 col-md-10">
+								<button class="btn btn-primary">submit</button>
+								
+							</div>
+						</div>
+					</form>
+					
+					<div class="collapse collapse-box" id="basic-form1" >
+						<div class="code-box">
+							<div class="clearfix">
+								<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#copy-pre"><i class="fa fa-clipboard"></i> Copy Code</a>
+								<a href="#basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+							</div>
+							<pre><code class="xml copy-pre" id="copy-pre">
+
+							</code></pre>
+						</div>
+					</div>
+				</div>
+				
+
+
+{% endblock %}

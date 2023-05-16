@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-header text-center mt20">
+                    <h3 class="section-title underline">Planning & Development</h3>
+                </div>
+                <!-- end section-header -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-8">
+                        <p>
+                            We have found that many businesses fail because they skip the first part – customer
+                            research. Indepth customer research, coupled with a concept that customers will love, is the
+                            key to success for any hospitality business.
+                        </p>
+
+                        <p>
+                            We will work with you from the starting phase and help validate ideas and concepts, and
+                            build a business that will bring good ROI.
+                        </p>
+
+                        <div class="container">
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Concept Building
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Customer Research
+                            </p>
+                            <p class="services-list"><i class="fa fa-angle-double-right green4"></i> Error Auditing</p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Project Validation
+                            </p>
+                            <p class="services-list"><i class="fa fa-angle-double-right green4"></i> Design</p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Sustainability Consulting
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Kitchen Planning
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{%  static 'user/images/portfolio/377-499/01.jpg' %}" class="img-responsive" style="width: 100%" />
+                    </div>
+                    <!-- end col-md-8 -->
+                </div>
+                <!-- end col-md-10 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+</div>
+<!-- end main -->
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}book appointmnet{% endblock %}
+{% block link %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block content %}
+
+<style>
+   
+</style>
+
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4></h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                           
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div>
+                            <!-- <a class="btn btn-primary " href="{% url 'addsitedet' %}" role="button" >
+                               Add Clients
+                            </a> -->
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box mb-30">
+                
+            <div class="pb-20">
+                <div class="mt-5"></div>
+
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Ph number</th>
+                            <th scope="col">whatsapp link</th>
+                            <th scope="col">Instagram link</th>
+                            <th scope="col">facebook link</th>
+                            <th scope="col">twitter link</th>
+                            <th scope="col">youtube link</th>
+                            <th scope="col">copy right marker</th>
+                            <th scope="col"> </th>
+                           
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for detail in details  %}
+                        <tr>
+                            <td>{{detail.email}}</td>
+                            <td>{{detail.ph_number}}</td>
+                            <td>{{detail.whatsapp_link}}</td>
+                            <td>{{detail.insta_link}}</td>
+                            <td>{{detail.facebook_link}}</td>
+                            <td>{{detail.twitter_link}}</td>
+                            <td>{{detail.utube_link}}</td>
+                            <td>{{detail.footer_copyright}}</td>
+                            
+
+                            
+                          
+                            <td><a href="{% url 'editsitedet' detail.id  %}" class="btn btn-primary">Edit</a></td>
+
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            </div>
+                
+                      <!-- Simple Datatable End -->
+           
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+
+<script>
+  
+jQuery(document).ready(function($) {
+    $('#example').DataTable();
+} );
+</script>
+
+{% endblock %}
+

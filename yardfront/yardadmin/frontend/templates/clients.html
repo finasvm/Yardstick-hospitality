@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-header text-center mt20">
+                    <h3 class="section-title underline">Our Clients</h3>
+                </div>
+                <!-- end section-header -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for client in clients %}
+                    <div class="col-md-4 p10">
+                        <div class="client-icon-container">
+                            <img
+                                src="{{client.profimage.url}}"
+                                class="client-icon img-responsive img-thumbnail pn"
+                                alt="Client 1"
+                            />
+                            <a href="{% url 'usergallery' %}#experience{{client.Title}}">
+                                <div class="overlay">   
+                                    <!-- <div class="client-icon-text">Hello</div> -->
+                                </div></a
+                            >
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                   
+                  
+                    
+                   
+                    
+                </div>
+                <!-- end col-md-10 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+</div>
+<!-- end main -->
+{% endblock %}

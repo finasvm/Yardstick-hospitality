@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    
+    
+    <!-- ========== MAIN ========== -->
+    <div class="main">
+        <section class="content-section">
+            <div class="container mt40">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- ========== SECTION HEADER ========== -->
+                        <div class="section-header">
+                            <h3 class="section-title underline">We are here!</h3>
+                        </div>
+                        <!-- end section-header -->
+
+                        <div class="col-sm-6 col-md-12">
+                            <h6 class="underline">Head office</h6>
+                            <p>House No 111, Nellikkode Housing Colony, Chevayoor, Kozhikode, Kerala - 673017</p>
+                        </div>
+
+                        <div class="mb50 col-sm-6 col-md-12">
+                            <h6 class="underline">Branch office</h6>
+                            <p>#C 401, Veracious Landsdale, White Field Main Road, Bangalore - 560066</p>
+                            {% for detail in details%}
+                            <p>
+                                <a href="tel:+919886055335"><i class="fa fa-phone"></i> +91 -  {{detail.ph_number}}</a>
+                            </p>
+                            <p>
+                                <a href="mailto:info@yardstickhospitality.com" target="_blank"
+                                    ><i class="fa fa-envelope"></i> {{detail.email}}</a
+                                >
+                            </p>
+                          
+                        </div>
+
+                        <div class="">
+                            <h6 class="underline">Follow Us</h6>
+                            <p>
+                                <a href="{{detail.whatsapp_link}}5" class="si-style-2">
+                                    <i class="fa fa-whatsapp"></i>
+                                </a>
+                                <a href="{{detail.insta_link}}" class="si-style-2">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="{{detail.facebook_link}}" class="si-style-2">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="{{detail.twitter_link}}" class="si-style-2">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="{{detail.utube_link}}" class="si-style-2"><i class="fa fa-youtube-play"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end col-md-4 -->
+                    {% endfor %}
+                    <div class="col-md-8">
+                        <!-- ========== SECTION HEADER ========== -->
+                        <div class="section-header">
+                            <h3 class="section-title underline">Book For Free Now!</h3>
+                        </div>
+                        <!-- end section-header -->
+
+                        <form class="" method="post" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control input-style-2"
+                                    name="name"
+                                    placeholder="Full Name"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    class="form-control input-style-2"
+                                    name="email"
+                                    placeholder="Email address"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input
+                                    type="text"
+                                    class="form-control input-style-2"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea
+                                    class="form-control input-style-2"
+                                    name="message"
+                                    placeholder="Enter your message.."
+                                    required=""
+                                    rows="3"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="st-btn primary-btn hvr-back hvr-sweep-to-right pull-right">
+                                Book Now
+                            </button>
+                        </form>
+                    </div>
+                    <!-- end col-md-8 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+    </div>
+    <!-- end main -->
+
+    {% endblock %}

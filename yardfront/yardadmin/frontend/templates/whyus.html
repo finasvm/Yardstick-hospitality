@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}shy us{% endblock %}
+{% block content %}
+
+		<!-- ========== MAIN ========== -->
+		<div class="main">
+			<!-- ========== FEATURES SECTION ========== -->
+			<section class="content-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 section-header text-center mt20">
+							<h3 class="section-title underline">Why Yardstick?</h3>
+						</div>
+						<!-- end section-header -->
+					</div>
+					<!-- end row -->
+				</div>
+				<!-- end container -->
+
+				<section>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-5"><img src="{%  static 'user/images/why_yardstick.jpg' %}" class="img-responsive" /></div>
+
+							<div class="col-md-7">
+								<div class="pl20 pr10 pb30 plxs30 prxs30">
+									<div class="row">
+										<div class="col-md-12 mb60">
+											<p class="text-justify">
+												Your business may be facing dozens of problems right now. But know this.
+											</p>
+
+											<p class="text-justify">
+												By connecting with us, we bring you over 30 years of problemsolving experience for top
+												hospitality brands all over the world.
+											</p>
+
+											<p class="text-justify">
+												Besides, most of our consultants have built their brands and know what it is like to
+												face complex and demanding problems.
+											</p>
+
+											<p class="text-justify">
+												Our consultants have been in your shoes. That we can guarantee.
+											</p>
+
+											<p class="text-justify">
+												We will stand by your side and assist you in building your business from scratch into
+												a signature hospitality brand.
+											</p>
+
+											<p class="text-justify"></p>
+
+											<p class="text-justify">
+												To know if we are the right consultants for you, why not book a call with one of our
+												consultants right now?
+											</p>
+
+											<!-- <p class="text-justify">
+												<em>
+													"An old saying encourages every host to ensure that not only the stomach of the
+													guests, but the hearts of the guests feel blissful with food, Come, let us help you
+													get on your way to making blissful stomachs and hearts."
+												</em>
+											</p> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end gray-bg -->
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- end container-fluid -->
+				</section>
+			</section>
+		</div>
+		<!-- end main -->
+
+        {% endblock %}
+
+
+		<div class="carousel-inner" role="listbox">
+			{% for banner in banner_details %}
+			<div class="item">
+				<img src="{{banner.Banner_title.url}}" alt="cover1" />
+				<!-- <div class="carousel-caption">cover1</div> -->
+			</div>
+			{% endfor %}
+			
+		</div>

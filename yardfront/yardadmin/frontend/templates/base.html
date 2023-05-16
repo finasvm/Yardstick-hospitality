@@ -1,0 +1,342 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<title>Yardstick Consulting and Hospitality</title>
+
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="" />
+
+		<link rel="shortcut icon" href="{%  static 'user/images/favicon.icon' %}	" />
+		<link rel="stylesheet" href="{% static 'user/styles/gallery.css' %}" />
+		<link rel="stylesheet" href="{%  static 'user/styles/vendor.css' %}" />
+		<link rel="stylesheet" href="{%  static 'user/styles/main.css' %}" />
+		<link rel="stylesheet" href="{%  static 'user/styles/back_to_top.css' %}" />
+
+		<!--[if lt IE 9]>
+			<script src="scripts/vendor/modernizr.js"></script>
+		<![endif]-->
+
+		<!-- Facebook Pixel Code -->
+		<script>
+			!(function (f, b, e, v, n, t, s) {
+				if (f.fbq) return;
+				n = f.fbq = function () {
+					n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+				};
+				if (!f._fbq) f._fbq = n;
+				n.push = n;
+				n.loaded = !0;
+				n.version = '2.0';
+				n.queue = [];
+				t = b.createElement(e);
+				t.async = !0;
+				t.src = v;
+				s = b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t, s);
+			})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1083422545435882');
+			fbq('track', 'PageView');
+		</script>
+		<noscript>
+			<img
+				height="1"
+				width="1"
+				style="display: none"
+				src="https://www.facebook.com/tr?id=1083422545435882&ev=PageView&noscript=1"
+			/>
+		</noscript>
+		<!-- End Facebook Pixel Code -->
+	</head>
+
+	<body class="header-shadow light-header">
+		<a class="enquire_now" href="{% url 'booknow' %}"><img src="{%  static 'user/images/enquire_now.jpg' %}" class="img-responsive" /></a>
+
+		<!-- ========== HEADER ========== -->
+		<div class="header menu-style-3">
+			<!-- ========== top bar menu ========== -->
+			<div class="top-menu">
+				<div class="container">
+					{% for detail in details %}
+					<div class="left-div pull-left">
+						
+						<a class="" href="{{detail.whatsapp_link}}"><i class="fa fa-whatsapp"></i></a>
+						<a class="" href="{{detail.insta_link}}">
+							<i class="fa fa-instagram"></i>
+						</a>
+						<a class="" href="{{detail.facebook_link}}"><i class="fa fa-facebook"></i></a>
+						<a class="" href="{{detail.twitter_link}}"><i class="fa fa-twitter"></i></a>
+						<a class="" href="{{detail.utube_link}}"><i class="fa fa-youtube-play"></i></a>
+					</div>
+					<div class="right-div pull-right">
+						<a href="tel:+{{detail.ph_number}}"><i class="fa fa-phone"></i> +91 - {{detail.ph_number}}</a>
+						<a href="mailto:{{detail.email}}" target="_blank">
+							<span><i class="fa fa-envelope"></i> {{detail.email}}</span>
+						</a>
+					</div>
+					<!-- end right-div -->
+					{% endfor %}
+				</div>
+				<!-- end container -->
+			</div>
+			<!-- end top-menu -->
+
+			<div class="container">
+				<!-- ========== MENU ========== -->
+				<nav class="menu">
+					<div class="logo">
+						<a href="{% url 'userhome' %}"
+							><img src="{%  static 'user/images/logo.jpg' %}" alt="Yardstick Consulting and Hospitality" class="logo-img"
+						/></a>
+					</div>
+					<!-- end logo -->
+
+					<!-- ========== MAIN MENU ========== -->
+					<ul class="main-menu">
+						<li class="active menu-item">
+							<a href="{% url 'userhome' %}"><i class="menu-icon fa fa-home"></i> Home</a>
+						</li>
+						<li class="menu-item"><a href="{% url 'userabout' %}">About Us</a></li>
+
+						<li class="menu-item">
+							<a href="#">Services <i class="fa fa-caret-down"></i> </a>
+							<!-- Sub Menu -->
+							<ul class="mega-submenu normal-sub">
+								<li>
+									<a href="{% url 'planning' %}">
+										<i class="fa fa-angle-right"> </i> Planning & Development
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'customerexperince' %}">
+										<i class="fa fa-angle-right"></i> Customer Experience
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'operationmanagement' %}">
+										<i class="fa fa-angle-right"></i> Operations & Management
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'humanresource' %}"> <i class="fa fa-angle-right"></i> Training Talent Aquisition </a>
+								</li>
+								<li>
+									<a href="{% url 'wellness' %}">
+										<i class="fa fa-angle-right"> </i> Wellness & Recreational Consulting
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'foodbev' %}">
+										<i class="fa fa-angle-right"> </i> Food & Beverage Consulting
+									</a>
+								</li>
+							</ul>
+							<!-- end mega-submenu -->
+						</li>
+						<!-- end menu-item -->
+
+						<li class="menu-item"><a href="{% url 'userwhyus' %}">why us</a></li>
+						<li class="menu-item"><a href="{% url 'userclients' %}">clients</a></li>
+						<li class="menu-item"><a href="{% url 'usergallery' %}">GALLERY</a></li>
+						<li class="menu-item"><a href="{% url 'usergallery' %}">BLOG</a></li>
+						<li class="menu-item"><a href="{% url 'booknow' %}">BOOK NOW</a></li>
+					</ul>
+					<!-- end main-menu -->
+				</nav>
+				<!-- end menu -->
+			</div>
+			<!-- end container -->
+		</div>
+		<!-- end header -->
+
+         <!-- contents -->
+        {% block content %}{% endblock %}
+          <!-- end of contents -->
+          
+        <!-- ==================================================
+        Footer: Classes
+        footer - Default footer
+        dark-footer - Dark footer [Use with .footer]
+        sticky-footer - Reveal footer on scroll
+        ================================================== -->
+		<footer class="footer footer-style-3 dark-footer" id="footer">
+			<div class="container footer-top">
+				<div class="row">
+					<!-- ========== left part ========== -->
+					<div class="col-md-8 col-sm-8">
+						<div class="col-md-4 col-sm-6">
+							<h5 class="footer-title underline">Quick menu</h5>
+							<ul class="ul">
+								<li>
+									<a href="{% url 'userhome' %}"><i class="fa fa-angle-right"></i> Home</a>
+								</li>
+								<li>
+									<a href="{% url 'userabout' %}"><i class="fa fa-angle-right"></i> About Us</a>
+								</li>
+								<li>
+									<a href="{% url 'userwhyus' %}" class="trans"><i class="fa fa-angle-right"></i> Why Us</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end col-md-3 -->
+						<div class="col-md-4 col-sm-6">
+							<h5 class="footer-title underline">Quick menu</h5>
+							<ul class="ul">
+								<li>
+									<a href="{% url 'planning' %}">
+										<i class="fa fa-angle-right"></i> Planning & Development
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'customerexperince' %}">
+										<i class="fa fa-angle-right"></i> Customer Experience
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'operationmanagement' %}">
+										<i class="fa fa-angle-right"></i> Operations & Management
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'humanresource' %}"> <i class="fa fa-angle-right"></i> Training and Talent Aquisition </a>
+								</li>
+								<li>
+									<a href="{% url 'wellness' %}">
+										<i class="fa fa-angle-right"></i> Wellness & Recreational Consulting
+									</a>
+								</li>
+								<li>
+									<a href="{% url 'foodbev' %}">
+										<i class="fa fa-angle-right"></i> Food & Beverage Consulting
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end col-md-3 -->
+						<div class="col-md-4 col-sm-6">
+							<h5 class="footer-title underline">Quick menu</h5>
+							<ul class="ul">
+								<li>
+									<a href="{% url 'userclients' %}" class="trans"><i class="fa fa-angle-right"></i> Clients</a>
+								</li>
+								<li>
+									<a href="{% url 'usergallery' %}" class="trans"><i class="fa fa-angle-right"></i> Gallery</a>
+								</li>
+								<li>
+									<a href="https://yardstickhospitality.com/blog/" class="trans"><i class="fa fa-angle-right"></i> Blog</a>
+								</li>
+								<li>
+									<a href="{% url 'booknow' %}" class="trans"><i class="fa fa-angle-right"></i> Book Now</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end col-md-3 -->
+					</div>
+					<!-- end col-md-8 -->
+
+					<!-- ========== right part ========== -->
+					<div class="col-md-4 col-sm-4">
+						<h5 class="footer-title underline">Contact Us</h5>
+						<p class="footer-desc address">
+							<strong style="font-size: 1.4em">Address</strong><br />
+							House No 111, Nellikkode Housing Colony,<br />
+							Chevayoor, Kozhikode,<br />
+							Kerala - 673017<br />
+						</p>
+						<!-- end footer-desc -->
+					</div>
+					<!-- end col-md-4 -->
+				</div>
+				<!-- end row -->
+			</div>
+			<!-- end footer-top -->
+			{% for detail in details %}
+
+			<div class="container footer-middle">
+				<div class="row">
+					<div class="col-md-6">
+						<h6 class="footer-title lowercase">
+							<i class="fa fa-phone"></i> <a href="tel:+{{detail.ph_number}}"> +91 - {{detail.ph_number}}</a>
+							<span class="ml10 mr10">|</span>
+							<i class="fa fa-envelope"></i>
+							<a href="mailto:{{detail.email}}" target="_blank">
+								{{detail.email}}
+							</a>
+						</h6>
+					</div>
+					<!-- end col-md-6 -->
+				</div>
+				<!-- end row -->
+			</div>
+			<!-- end footer-middle -->
+		
+
+			<div class="footer-colored-social">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<a href="{{detail.whatsapp_link}}" class="trans pr10 pl10">
+								<i class="fa fa-2x fa-whatsapp" style="color: #075e54"></i>
+							</a>
+							<a href="{{detail.insta_link}}" class="trans pr10 pl10">
+								<i class="fa fa-2x fa-instagram" style="color: #c32aa3"></i>
+							</a>
+							<a href="{{detail.facebook_link}}" class="trans pr10 pl10">
+								<i class="" style="color: #3b5998"></i>
+							</a>
+							<a href="{{detail.twitter_link}}" class="trans pr10 pl10"
+								><i class="fa fa-2x fa-twitter" style="color: #00acee"></i
+							></a>
+							<a href="{{detail.utube_link}}" class="trans pr10 pl10">
+								<i class="fa fa-2x fa-youtube-play" style="color: #ff0000"></i>
+							</a>
+						</div>
+					</div>
+					<!-- end row -->
+				</div>
+				<!-- end container -->
+			</div>
+			<!-- end footer-last -->
+			
+
+			<div class="footer-last">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							&copy; {{detail.footer_copyright}} &nbsp; | &nbsp;
+							<a>Powered By BNT</a>
+						</div>
+					</div>
+					<!-- end row -->
+				</div>
+				<!-- end container -->
+			</div>
+			<!-- end footer-last -->
+			{% endfor %}
+
+			<!-- ========== Scroll to top button ========== -->
+			<div class="scroll-to-top trans"><i class="fa fa-angle-up"></i></div>
+		</footer>
+
+		<script src="cdn-cgi/scripts/84a23a00/cloudflare-static/email-decode.min.js"></script>
+		<script src="{%  static 'user/scripts/vendor.js' %}"></script>
+		<script src="{%  static 'user/scripts/plugins.js' %}"></script>
+		<script src="{%  static 'user/scripts/main.js' %}"></script>
+		<script src="{%  static 'user/scripts/init-cube-home-2.js' %}"></script>
+		
+		<script>
+			$(document).ready(function () {
+				$('.carousel').carousel();
+			});
+		</script>
+	</body>
+</html>
+
+
+

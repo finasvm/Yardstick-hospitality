@@ -1,0 +1,337 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+	<!-- <div
+		class="grad-bg grad-bg-11 text-center"
+		style="
+			background: url('images/banner-cropped.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		"
+	>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 mt30">
+					<h1 class="headline text-left">for <span class="typed"></span></h1>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!-- end grad-bg -->
+
+	<!-- Carousel-->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="{{first_banner.Banner_images}}" alt="cover1" />
+		    </div>
+			<div class="item">
+				<img src="{{second_banner.Banner_images}}" alt="cover2" />
+			</div>
+			<div class="item">
+				<img src="{{third_banner.Banner_images}}" alt="cover3" />
+			</div>
+
+
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- end Carousel-->
+
+	<!-- ========== FEATURES SECTION ========== -->
+	<section class="content-section">
+		<div class="container mt40">
+			<div class="row">
+				<div class="col-md-12 section-header text-center">
+					<h3 style="font-size: 29px" class="section-title underline">
+						Hospitality Industry is Evolving.
+					</h3>
+				</div>
+				<!-- end section-header -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-center" style="font-size: 21px; line-height: normal">
+						Staying in business is proving to be a struggle. With over 30 years of experience, our
+						consultants have what it takes to solve your problems.
+					</p>
+
+					<div class="text-center mt40">
+						<a href="{% url 'booknow' %}" class="st-btn btn-lg primary-btn hvr-back hvr-sweep-to-right trans">
+							GET IN TOUCH
+						</a>
+					</div>
+				</div>
+				<!-- end col-md-10 -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+
+	<!-- ========== COUNTER SECTION ========== -->
+	<section class="content-section hidden">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="counter-box text-center counter-box-2">
+						<span class="count-icon ion-happy-outline"></span>
+						<div class="count-info">
+							<h6><span class="counter">11000</span></h6>
+							<p>delighted clients.</p>
+						</div>
+						<!-- end count-info -->
+					</div>
+					<!-- end counter-box -->
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter-box text-center counter-box-2">
+						<span class="count-icon ion-ios-flag-outline"></span>
+						<div class="count-info">
+							<h6><span class="counter">2200</span></h6>
+							<p>projects done.</p>
+						</div>
+						<!-- end count-info -->
+					</div>
+					<!-- end counter-box -->
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter-box text-center counter-box-2">
+						<span class="count-icon ion-ios-flame-outline"></span>
+						<div class="count-info">
+							<h6><span class="counter">7000</span></h6>
+							<p>cups of tea.</p>
+						</div>
+						<!-- end count-info -->
+					</div>
+					<!-- end counter-box -->
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter-box text-center counter-box-2">
+						<span class="count-icon ion-ios-albums-outline"></span>
+						<div class="count-info">
+							<h6><span class="counter">120</span></h6>
+							<p>devices tested.</p>
+						</div>
+						<!-- end count-info -->
+					</div>
+					<!-- end counter-box -->
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+
+	<!-- ========== PORTFOLIO SECTION ========== -->
+	<section class="content-section">
+		<div class="container">
+			<div class="row">
+				<!-- ========== SECTION HEADER ========== -->
+				<div class="col-md-12 section-header text-center">
+					<h3 class="section-title underline">Our Services</h3>
+				</div>
+				<!-- end section-header -->
+
+				<div class="col-md-12 port-items">
+					<div id="js-grid-mosaic" class="cbp cbp-l-grid-mosaic">
+						<!-- ========== PORTFOLIO ITEM ========== -->
+
+						<div class="cbp-item web-design graphic p5">
+							<a href="{% url 'planning' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/01.jpg' %}" alt="Yardstick Consulting and Hospitality" />
+								</div>	
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Planning & Development</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+
+						<!-- ========== PORTFOLIO ITEM ========== -->
+						<div class="cbp-item print motion p5">
+							<a href="{% url 'customerexperince' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/02.jpg' %}" alt="" />
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Customer Experience</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+
+						<!-- ========== PORTFOLIO ITEM ========== -->
+						<div class="cbp-item web-design graphic print p5">
+							<a href="{% url 'operationmanagement' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/03.jpg' %}" alt="" />
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Operations & Management</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+
+						<!-- ========== PORTFOLIO ITEM ========== -->
+						<div class="cbp-item print motion p5">
+							<a href="{% url 'humanresource' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/04.jpg' %}" alt="" />
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Training and Talent </b> Aquisition</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+
+						<!-- ========== PORTFOLIO ITEM ========== -->
+						<div class="cbp-item web-design print p5">
+							<a href="{% url 'wellness' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/05.jpg' %}" alt="" />
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Wellness & Recreational Consulting</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+
+						<!-- ========== PORTFOLIO ITEM ========== -->
+						<div class="cbp-item print motion p5">
+							<a href="{% url 'foodbev' %}" class="cbp-caption">
+								<div class="cbp-caption-defaultWrap">
+									<img src="{%  static 'user/images/portfolio/377-499/06.jpg' %}" alt="" />
+								</div>
+								<div class="cbp-caption-activeWrap">
+									<div class="cbp-l-caption-alignCenter">
+										<div class="cbp-l-caption-body">
+											<div class="cbp-l-caption-title">Food & Beverage Consulting</div>
+										</div>
+										<!-- end cbp-l-caption-body -->
+									</div>
+									<!-- end cbp-l-caption-alignCenter -->
+								</div>
+								<!-- end cbp-caption-activeWrap -->
+							</a>
+						</div>
+						<!-- end cbp-item -->
+					</div>
+					<!-- end js-grid-mosaic -->
+				</div>
+				<!-- end port-items -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+
+	<!-- ========== CLIENTS CAROUSEL ========== -->
+	<section class="content-section">
+		<!-- ========== SECTION HEADER ========== -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="section-title underline center-block">Our Clients</h3>
+					<div class="owl-carousel client-carousel">
+						{% for client in client_details %}
+						<div class="text-center" style="margin: 4px">
+							<a href="{% url 'usergallery' %}#experience{{client.Title}}"><img src="{{client.profimage.url}}" /></a>
+						</div>
+						{% endfor %}
+						<!-- <div class="text-center" style="margin: 4px">
+							<a href="gallery.html#smth"><img src="{%  static 'user/images/clients/2.jpg' %}" alt="Client 2" /></a>
+						</div>
+						<div class="text-center" style="margin: 4px">
+							<a href="gallery.html#nawabz"><img src="{%  static 'user/images/clients/3.jpg' %}" alt="Client 3" /></a>
+						</div>
+						<div class="text-center" style="margin: 4px">
+							<a href="gallery.html#caffeolgutz"><img src="{%  static 'images/clients/4.jpg' %}" alt="Client 4" /></a>
+						</div>
+						<div class="text-center" style="margin: 4px">
+							<a href="gallery.html#cantaloupe"><img src="{%  static 'user/images/clients/5.jpg' %}" alt="Client 5" /></a>
+						</div>
+						<div class="text-center" style="margin: 4px">
+							<a href="gallery.html#tobey"><img src="{%  static 'user/images/clients/6.jpg' %}" alt="Client 6" /></a>
+						</div>
+						<div class="text-center" style="margin: 4px">
+							<a href="gallery.html#new_one"><img src="{%  static 'user/images/clients/7.jpg' %}" alt="Client 6" /></a>
+						</div> -->
+					</div>
+					<!-- end owl-carousel -->
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</section>
+</div>
+<!-- end main -->
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<!-- ========== MAIN ========== -->
+<div class="main">
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-header text-center mt20">
+                    <h3 class="section-title underline">Operations & Management</h3>
+                </div>
+                <!-- end section-header -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-8">
+                        <p>
+                            Having a proper operational flow is crucial to maintaining high productivity and efficiency
+                            in the workplace. We help you optimize the day-to-day operations and come up with
+                            cost-effective solutions to operational problems.
+                        </p>
+
+                        <div class="container">
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Raw material acquisition
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Day-to-Day operation
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Equipment sourcing
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Technology Consulting
+                            </p>
+                            <p class="services-list">
+                                <i class="fa fa-angle-double-right green4"></i> Facilities Management
+                            </p>
+                            <p class="services-list"><i class="fa fa-angle-double-right green4"></i> Finance</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{%  static 'user/images/portfolio/377-499/03.jpg' %}" class="img-responsive" style="width: 100%" />
+                    </div>
+                    <!-- end col-md-8 -->
+                </div>
+                <!-- end col-md-10 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+</div>
+<!-- end main -->
+
+{% endblock %}
