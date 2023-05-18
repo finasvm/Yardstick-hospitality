@@ -2,6 +2,74 @@
 {% load static %}
 {% block title %}about{% endblock %}
 {% block content %}
+
+<div class="container">
+	<!-- ========== MENU ========== -->
+	<nav class="menu">
+		<div class="logo">
+			<a href="{% url 'userhome' %}"
+				><img src="{%  static 'user/images/logo.jpg' %}" alt="Yardstick Consulting and Hospitality" class="logo-img"
+			/></a>
+		</div>
+		<!-- end logo -->
+
+<!-- ========== MAIN MENU ========== -->
+<ul class="main-menu">
+	<li class=" menu-item">
+		<a href="{% url 'userhome' %}"><i class="menu-icon fa fa-home"></i> Home</a>
+	</li>
+	<li class="active menu-item"><a href="{% url 'userabout' %}">About Us</a></li>
+
+	<li class="menu-item">
+		<a href="#">Services <i class="fa fa-caret-down"></i> </a>
+		<!-- Sub Menu -->
+		<ul class="mega-submenu normal-sub">
+			<li>
+				<a href="{% url 'planning' %}">
+					<i class="fa fa-angle-right"> </i> Planning & Development
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'customerexperince' %}">
+					<i class="fa fa-angle-right"></i> Customer Experience
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'operationmanagement' %}">
+					<i class="fa fa-angle-right"></i> Operations & Management
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'humanresource' %}"> <i class="fa fa-angle-right"></i> Training Talent Aquisition </a>
+			</li>
+			<li>
+				<a href="{% url 'wellness' %}">
+					<i class="fa fa-angle-right"> </i> Wellness & Recreational Consulting
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'foodbev' %}">
+					<i class="fa fa-angle-right"> </i> Food & Beverage Consulting
+				</a>
+			</li>
+		</ul>
+		<!-- end mega-submenu -->
+	</li>
+	<!-- end menu-item -->
+
+	<li class="menu-item"><a href="{% url 'userwhyus' %}">why us</a></li>
+	<li class="menu-item"><a href="{% url 'userclients' %}">clients</a></li>
+	<li class="menu-item"><a href="{% url 'usergallery' %}">GALLERY</a></li>
+	<li class="menu-item"><a href="{% url 'usergallery' %}">BLOG</a></li>
+	<li class="menu-item"><a href="{% url 'booknow' %}">BOOK NOW</a></li>
+</ul>
+<!-- end main-menu -->
+</nav>
+<!-- end menu -->
+</div>
+<!-- end container -->
+</div>
+<!-- end header -->
     
     <!-- ========== MAIN ========== -->
     <div class="main">
@@ -72,7 +140,7 @@
                                 <li><i class="fa fa-check list-icon"></i>Wellness & Recreational Consulting</li>
                                 <li><i class="fa fa-check list-icon"></i>Food & Beverage Consulting</li>
                             </ul>
-                            <img src="{%  static 'images/about.jpg' %}" class="img-responsive" />
+                            <img src="{%  static 'user/images/about.jpg' %}" class="img-responsive" />
                         </div>
                         <!-- end col-md-8 -->
                     </div>
@@ -97,7 +165,7 @@
                         <div class="thumbnail">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <img src="{%  static 'images/bipin.jpg' %}" class="img-responsive" style="width: 100%" />
+                                    <img src="{%  static 'user/images/bipin.jpg' %}" class="img-responsive" style="width: 100%" />
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <h5><strong>Bipin Venugopal - Founder, Director</strong></h5>
@@ -115,7 +183,7 @@
                 <div class="row slideanim slide">
                     <div class="col-sm-4 p-md-40">
                         <div class="thumbnail">
-                            <img src="{%  static 'images/chef_nengah.jpg' %}" alt="Paris" width="400" height="300" />
+                            <img src="{%  static 'user/images/chef_nengah.jpg' %}" alt="Paris" width="400" height="300" />
                             <h5><strong>Chef Nengah - Culinary Advisor</strong></h5>
                             <p>
                                 Chef Nengah coming from ubud, Indonesia having 25 year experience in different cuisines of
@@ -127,7 +195,7 @@
                     </div>
                     <div class="col-sm-4 p-md-40">
                         <div class="thumbnail">
-                            <img src="{%  static 'images/avi_atholi.jpg' %}" alt="New York" width="400" height="300" />
+                            <img src="{%  static 'user/images/avi_atholi.jpg' %}" alt="New York" width="400" height="300" />
                             <h5><strong>Avi Atholi - Financial Advisor</strong></h5>
                             <p>
                                 Avi brings more than 15 years of experience in consulting and banking worlds in United
@@ -138,7 +206,7 @@
                     </div>
                     <div class="col-sm-4 p-md-40">
                         <div class="thumbnail">
-                            <img src="{%  static 'images/krishnadas.jpg' %}" alt="San Francisco" width="400" height="300" />
+                            <img src="{%  static 'user/images/krishnadas.jpg' %}" alt="San Francisco" width="400" height="300" />
                             <h5><strong>Krishnadas – Director Food and Beverage</strong></h5>
                             <p>
                                 Krishnadas brings 10 years of experience in food and beverage operations, in a variety of

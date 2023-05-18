@@ -65,13 +65,10 @@ class EditClient(UpdateView):
     success_url=reverse_lazy('Clientview')
     pk_url_kwarg='id'
 
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
     
 class DeleteClient(DeleteView):
     template_name='deleteclients.html'
@@ -90,11 +87,8 @@ class ClientGalleryView(View):
 
 class AddClientImages(View):
     def get(self,request):
-       if request.session.has_key('key'):
             client_title=Clients.objects.all()
             return render(request,'addclientphotos.html', {'clients':client_title})
-       else:
-           return redirect('loginadmin')
     
     def post(self,request):
         if request.session.has_key('key'):
@@ -113,13 +107,10 @@ class EditClientPic(UpdateView):
     success_url=reverse_lazy('Clientgalview')
     pk_url_kwarg='id'
 
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
     
 class DeleteClientPic(DeleteView):
     template_name='deleteclientphotos.html'
@@ -129,11 +120,8 @@ class DeleteClientPic(DeleteView):
     
 class SiteDetailsView(View):
     def get(self,request):
-        if request.session.has_key('key'):
             site_details=SiteDetails.objects.all()
             return render(request,'sitedetview.html', {'details':site_details})
-        else:
-            return redirect('loginadmin')
 
     
 class AddSiteDet(CreateView):
@@ -142,14 +130,11 @@ class AddSiteDet(CreateView):
     template_name='addsitedet.html'
     success_url=reverse_lazy('sitedetview')
     
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             form.instance.user=self.request.user
             self.object = form.save()
             # messages.success(self.request,'Bio added successfully')
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
 
         
 class EditSiteDetails(UpdateView):
@@ -159,36 +144,27 @@ class EditSiteDetails(UpdateView):
     success_url=reverse_lazy('sitedetview')
     pk_url_kwarg='id'
 
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
     
 class BannerView(View):
      def get(self,request):
-        if request.session.has_key('key'):
             banner_details=Banner.objects.all()
             return render(request,'bannerview.html', {'details':banner_details})
-        else:
-            return redirect('loginadmin')
-
+     
 class AddBannerImg(CreateView):
     model=Banner
     form_class=BannerImg
     template_name='addbannerimg.html'
     success_url=reverse_lazy('bannerview')
 
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             form.instance.user=self.request.user
             self.object = form.save()
             # messages.success(self.request,'Bio added successfully')
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
 
 class EditBanner(UpdateView):
     template_name='editbanner.html'
@@ -197,13 +173,11 @@ class EditBanner(UpdateView):
     success_url=reverse_lazy('bannerview')
     pk_url_kwarg='id'
 
-    def form_valid(self, form,request):
-        if request.session.has_key('key'):
+    def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
             return super().form_valid(form)
-        else:
-            return redirect('loginadmin')
+      
     
 class DeleteBanner(DeleteView):
     template_name='deletebanner.html'

@@ -3,6 +3,78 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
+
+
+<div class="container">
+	<!-- ========== MENU ========== -->
+	<nav class="menu">
+		<div class="logo">
+			<a href="{% url 'userhome' %}"
+				><img src="{%  static 'user/images/logo.jpg' %}" alt="Yardstick Consulting and Hospitality" class="logo-img"
+			/></a>
+		</div>
+		<!-- end logo -->
+
+
+<!-- ========== MAIN MENU ========== -->
+<ul class="main-menu">
+	<li class=" menu-item">
+		<a href="{% url 'userhome' %}"><i class="menu-icon fa fa-home"></i> Home</a>
+	</li>
+	<li class=" menu-item"><a href="{% url 'userabout' %}">About Us</a></li>
+
+	<li class="active menu-item">
+		<a href="#">Services <i class="fa fa-caret-down"></i> </a>
+		<!-- Sub Menu -->
+		<ul class="mega-submenu normal-sub">
+			<li>
+				<a href="{% url 'planning' %}">
+					<i class="fa fa-angle-right"> </i> Planning & Development
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'customerexperince' %}">
+					<i class="fa fa-angle-right"></i> Customer Experience
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'operationmanagement' %}">
+					<i class="fa fa-angle-right"></i> Operations & Management
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'humanresource' %}"> <i class="fa fa-angle-right"></i> Training Talent Aquisition </a>
+			</li>
+			<li>
+				<a href="{% url 'wellness' %}">
+					<i class="fa fa-angle-right"> </i> Wellness & Recreational Consulting
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'foodbev' %}">
+					<i class="fa fa-angle-right"> </i> Food & Beverage Consulting
+				</a>
+			</li>
+		</ul>
+		<!-- end mega-submenu -->
+	</li>
+	<!-- end menu-item -->
+
+	<li class="menu-item"><a href="{% url 'userwhyus' %}">why us</a></li>
+	<li class="menu-item"><a href="{% url 'userclients' %}">clients</a></li>
+	<li class="menu-item"><a href="{% url 'usergallery' %}">GALLERY</a></li>
+	<li class="menu-item"><a href="https://yardstickhospitality.com/blog/">BLOG</a></li>
+	<li class="menu-item"><a href="{% url 'booknow' %}">BOOK NOW</a></li>
+</ul>
+
+<!-- end main-menu -->
+</nav>
+<!-- end menu -->
+</div>
+<!-- end container -->
+</div>
+<!-- end header -->
+
 		<!-- ========== MAIN ========== -->
 		<div class="main">
 			<!-- ========== FEATURES SECTION ========== -->

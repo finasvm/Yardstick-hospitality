@@ -23,7 +23,7 @@ class ClientForm(forms.ModelForm):
         }
         widgets ={
             'Title':forms.TextInput(attrs={'class':'form-control'}),
-            'Image':forms.FileInput(attrs={'class':'form-control'})
+            'Image':forms.ClearableFileInput(attrs={'class':'form-control'}),
         }
 
 class SiteDetChange(forms.ModelForm):
@@ -31,14 +31,14 @@ class SiteDetChange(forms.ModelForm):
         model=SiteDetails
         fields  = ['email', 'ph_number','whatsapp_link','insta_link','facebook_link','twitter_link','utube_link','footer_copyright']
         labels={
-            'Email':'email',
-            'phone number':'ph_number',
-            'whatsapp link':'whatsapp_link',
-            'instagram link':'insta_link',
-            'facebook link':'facebook_link',
-            'twitter link':'twitter_link',
-            'youtube link':'utube_link',
-            'copyright marker':'footer_copyright'
+            'email':'Email',
+            'ph_number':'ph number',
+            'whatsapp_link':'whatsapp link',
+            'insta_link':'instagram link',
+            'facebook_link':'facebook link',
+            'twitter_link':'Twitter link',
+            'utube_link':'youtube link',
+            'footer_copyright':'copyright marker'
             
 
         }
@@ -60,8 +60,8 @@ class BannerImg(forms.ModelForm):
         model=Banner
         fields  = ['Banner_images', 'Banner_title']
         labels={
-            'Banner images':'Banner_images',
-            'Banner title':'Banner_title',
+            'Banner_images':'Banner images',
+            'Banner_title':'Banner title',
         }
 
         widgets ={
