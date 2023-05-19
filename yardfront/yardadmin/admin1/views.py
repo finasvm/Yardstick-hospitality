@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import View,CreateView,TemplateView,FormView,UpdateView,DeleteView
 from .forms import *
 from .models import *
+from django.contrib import messages
 from django.urls import reverse_lazy
 # Create your views here.
 
@@ -53,6 +54,7 @@ class AddClient(View):
             title=request.POST['title1']
             img=request.FILES['image1']
             Clients.objects.create(Title=title,profimage=img)
+            messages.success(self.request,'client Added successfully')
             return redirect('Clientview')
         else:
             return redirect('loginadmin')
@@ -64,10 +66,12 @@ class EditClient(UpdateView):
     model=Clients
     success_url=reverse_lazy('Clientview')
     pk_url_kwarg='id'
+    
 
     def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
+            messages.success(self.request,'client updated successfully')
             return super().form_valid(form)
     
 class DeleteClient(DeleteView):
@@ -75,7 +79,8 @@ class DeleteClient(DeleteView):
     model=Clients
     success_url=reverse_lazy('Clientview')
     pk_url_kwarg='id'
-
+   
+    
 class ClientGalleryView(View):
     def get(self,request):
         if request.session.has_key('key'):
@@ -96,6 +101,8 @@ class AddClientImages(View):
             img=request.FILES['image1']
             custitle = Clients.objects.get(Title=title)
             ClientImages.objects.create(clienttitle=custitle,images=img)
+            messages.success(self.request,'client image added successfully')
+
             return redirect('Clientgalview')
         else:
             return redirect('loginadmin')
@@ -110,6 +117,7 @@ class EditClientPic(UpdateView):
     def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
+            messages.success(self.request,'client image updated successfully')
             return super().form_valid(form)
     
 class DeleteClientPic(DeleteView):
@@ -133,7 +141,7 @@ class AddSiteDet(CreateView):
     def form_valid(self, form):
             form.instance.user=self.request.user
             self.object = form.save()
-            # messages.success(self.request,'Bio added successfully')
+            messages.success(self.request,'site details added successfully')
             return super().form_valid(form)
 
         
@@ -147,6 +155,7 @@ class EditSiteDetails(UpdateView):
     def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
+            messages.success(self.request,'site details updated successfully')
             return super().form_valid(form)
     
 class BannerView(View):
@@ -163,7 +172,7 @@ class AddBannerImg(CreateView):
     def form_valid(self, form):
             form.instance.user=self.request.user
             self.object = form.save()
-            # messages.success(self.request,'Bio added successfully')
+            messages.success(self.request,'Banner added successfully')
             return super().form_valid(form)
 
 class EditBanner(UpdateView):
@@ -176,6 +185,8 @@ class EditBanner(UpdateView):
     def form_valid(self, form):
             """If the form is valid, save the associated model."""
             self.object = form.save()
+            messages.success(self.request,'Banner updated successfully')
+
             return super().form_valid(form)
       
     
