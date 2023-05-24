@@ -72,11 +72,14 @@
                         {% for client in clients  %}
                         <tr>
                             <td>{{client.clienttitle.Title}}</td>
+                             {% if client.images %}
                             <td> <img
                                 src="{{client.images.url}}"
-                                style="height: 100px;width: 100px;"
+                                height="=150px" width="150px"
                                 alt=""></td>
-                          
+                            {% else %}
+                            <td></td>
+                            {% endif %}
                             <td><a href="{% url 'editclientsgal' client.id  %}" class="btn btn-primary">Edit</a></td>
                             <td><a href="{% url 'deleteclientsgal' client.id  %}" class="btn btn-danger">Delete</a></td>
 

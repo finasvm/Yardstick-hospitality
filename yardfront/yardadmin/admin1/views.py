@@ -38,6 +38,7 @@ class Login(View):
 class ClientView(View):
     def get(self,request):
         if request.session.has_key('key'):
+            
             client_details=Clients.objects.all()
             return render(request,'showclients.html', {'clients':client_details})
         else:
@@ -128,8 +129,8 @@ class DeleteClientPic(DeleteView):
     
 class SiteDetailsView(View):
     def get(self,request):
-            site_details=SiteDetails.objects.all()
-            return render(request,'sitedetview.html', {'details':site_details})
+            site_details=SiteDetails.objects.get(id=3)
+            return render(request,'sitedetview.html', {'detail':site_details})
 
     
 class AddSiteDet(CreateView):
@@ -186,7 +187,6 @@ class EditBanner(UpdateView):
             """If the form is valid, save the associated model."""
             self.object = form.save()
             messages.success(self.request,'Banner updated successfully')
-
             return super().form_valid(form)
       
     

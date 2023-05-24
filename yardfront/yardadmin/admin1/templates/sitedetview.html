@@ -1,40 +1,15 @@
+
+
+
 {% extends 'base1.html' %}
 {% load static %}
 {% block title %}book appointmnet{% endblock %}
-{% block link %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
-{% endblock %}
 {% block content %}
 
-<style>
-   
-</style>
-
-
 <div class="main-container">
-    <div class="pd-ltr-20 xs-pd-20-10">
-        <div class="min-height-200px">
-            <div class="page-header">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="title">
-                            <h4></h4>
-                        </div>
-                        <nav aria-label="breadcrumb" role="navigation">
-                           
-                        </nav>
-                    </div>
-                    <div class="col-md-6 col-sm-12 text-right">
-                        <div>
-                            <!-- <a class="btn btn-primary " href="{% url 'addsitedet' %}" role="button" >
-                               Add Clients
-                            </a> -->
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<div class="pd-ltr-20 xs-pd-20-10">
+		<div class="min-height-200px">
+			
             {% if messages %}
             {% for msg in messages%}
             {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
@@ -51,72 +26,76 @@
             {% endif %}
             {% endfor %}
             {% endif %}
-            <div class="card-box mb-30">
-                
-            <div class="pb-20">
-                <div class="mt-5"></div>
-
-            <div class="table-responsive">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th scope="col">Email</th>
-                            <th scope="col">Ph number</th>
-                            <th scope="col">whatsapp link</th>
-                            <th scope="col">Instagram link</th>
-                            <th scope="col">facebook link</th>
-                            <th scope="col">twitter link</th>
-                            <th scope="col">youtube link</th>
-                            <th scope="col">copy right marker</th>
-                            <th scope="col"> </th>
-                           
+				<!-- Default Basic Forms Start -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix">
+                       
+						<div class="pull-left">
+							<h4 class="text-blue h4">Add details</h4>
+							<p class="mb-30"></p>
+						</div>
+						
+					</div>
+                   
+						
+						<div class="form-group row">
                             
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for detail in details  %}
-                        <tr>
-                            <td>{{detail.email}}</td>
-                            <td>{{detail.ph_number}}</td>
-                            <td>{{detail.whatsapp_link}}</td>
-                            <td>{{detail.insta_link}}</td>
-                            <td>{{detail.facebook_link}}</td>
-                            <td>{{detail.twitter_link}}</td>
-                            <td>{{detail.utube_link}}</td>
-                            <td>{{detail.footer_copyright}}</td>
-                            
-
-                            
-                          
-                            <td><a href="{% url 'editsitedet' detail.id  %}" class="btn btn-primary">Edit</a></td>
-
-                            
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            </div>
-            </div>
-                
-                      <!-- Simple Datatable End -->
-           
-        </div>
-        
-    </div>
-    
+							<label class="col-sm-12 col-md-2 col-form-label">Email</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.email}}
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Phone number</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.ph_number}}
+							</div>
+						</div>
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Whatsapp link</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.whatsapp_link}}
+							</div>
+						</div>
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Instagram link</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.insta_link}}
+							</div>
+						</div>
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Twitter link</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.twitter_link}}
+							</div>
+						</div>
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Youtube link</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.utube_link}}
+							</div>
+						</div>
+                        <div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Copyright marker</label>
+							<div class="col-sm-12 col-md-10">
+								{{detail.footer_copyright}}
+							</div>
+						</div>
+                        
+					
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label"></label>
+							<div class="col-sm-12 col-md-10">
+								<a href="{% url 'editsitedet' detail.id  %}" class="btn btn-primary">Edit</a>
+							</div>
+						</div>
+					</form>
+					
+				</div>
+		</div>
+	</div>
 </div>
+				
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-
-<script>
-  
-jQuery(document).ready(function($) {
-    $('#example').DataTable();
-} );
-</script>
 
 {% endblock %}
-

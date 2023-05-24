@@ -11,7 +11,9 @@ class ClientFormGal(forms.ModelForm):
         }
         widgets ={
             'Title':forms.TextInput(attrs={'class':'form-control'}),
-            'Image':forms.ClearableFileInput(attrs={'class':'form-control'})
+             'Image':forms.ClearableFileInput(attrs={'class':'form-control'})
+
+           
         }
 
 class ClientForm(forms.ModelForm):
@@ -23,7 +25,7 @@ class ClientForm(forms.ModelForm):
         }
         widgets ={
             'Title':forms.TextInput(attrs={'class':'form-control'}),
-            'Image':forms.ClearableFileInput(attrs={'class':'form-control'}),
+           
         }
 
 class SiteDetChange(forms.ModelForm):
@@ -65,6 +67,5 @@ class BannerImg(forms.ModelForm):
         }
 
         widgets ={
-        'Banner images':forms.ClearableFileInput(attrs={'class':'form-control'}),
         'Banner title':forms.TextInput(attrs={'class':'form-control'})
         }
